@@ -1,8 +1,89 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+html, body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
 }
 
 a {
   color: #00B7FF;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 375px) {
+  html {
+      /* iPhone6的375px尺寸作为16px基准，414px正好18px大小, 600 20px */
+      font-size: calc(100% + 2 * (100vw - 375px) / 39);
+      font-size: calc(16px + 2 * (100vw - 375px) / 39);
+  }
+}
+@media screen and (min-width: 414px) {
+  html {
+      /* 414px-1000px每100像素宽字体增加1px(18px-22px) */
+      font-size: calc(112.5% + 4 * (100vw - 414px) / 586);
+      font-size: calc(18px + 4 * (100vw - 414px) / 586);
+  }
+}
+@media screen and (min-width: 600px) {
+  html {
+      /* 600px-1000px每100像素宽字体增加1px(20px-24px) */
+      font-size: calc(125% + 4 * (100vw - 600px) / 400);
+      font-size: calc(20px + 4 * (100vw - 600px) / 400);
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+      /* 1000px往后是每100像素0.5px增加 */
+      font-size: calc(137.5% + 6 * (100vw - 1000px) / 1000);
+      font-size: calc(22px + 6 * (100vw - 1000px) / 1000);
+  }
+}
+
+.common-button{
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  float: none;
+  z-index: auto;
+  width: 106px;
+  height: auto;
+  position: static;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0;
+  padding: 5px 18px;
+  overflow: visible;
+  border: none;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  font: normal normal bold 15px/normal "Battambang", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: rgb(18, 129, 5);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-shadow: none;
+  -webkit-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -moz-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -o-transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  transition: background 0.2s cubic-bezier(0.25, 0.25, 0.75, 0.75);
+  -webkit-transform: none;
+  transform: none;
+  -webkit-transform-origin: 50% 50% 0;
+  transform-origin: 50% 50% 0;
+}
+.common-button.button-red{
+  background: rgb(248, 4, 65);
 }

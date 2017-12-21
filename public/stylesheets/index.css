@@ -1,0 +1,58 @@
+body{
+    background: url('/images/background.jpg');
+    text-align: center;
+}
+.gride-control{
+    margin-top: 2rem;
+    position: relative;
+    display: inline-block;
+    width: 30rem;
+    background-color: rgba(216, 84, 150, 0.9);
+    padding: .5rem 3rem;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    border: 3px solid black;
+    text-align: right;
+}
+
+.gride{
+    position: relative;
+    display: inline-block;
+    width: 34rem;
+    min-height: 1rem;
+    background: rgba(45, 119, 39, .95);
+    padding: .5rem 1rem;
+    border: 3px solid black;
+    border-top: 0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.gride>table{
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+}
+
+.gride>table td{
+    min-width: 8%;
+}
+
+.row>div{
+    display: inline-block;
+    width: 20%;
+    position: relative;
+}
+
+.row{
+    width: 100%;
+    position: relative;
+}
+
+.icon>img {
+    height: 3rem;
+}
+
+.profit>img {
+    height: 2rem;
+}
