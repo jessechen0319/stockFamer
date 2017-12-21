@@ -47,11 +47,11 @@
         
     }
 
-    $.get("/getRecords").then((data)=>{
+    $.get("/getRecords_jesse").then((data)=>{
         console.log(_getRowWithRecords(data[0]));
         if(data.length > 0){
             data.forEach((item)=>{
-                $('.gride>table').append($(_getRowWithRecords(data[0])));
+                $('.gride>table').append($(_getRowWithRecords(item)));
             })
         }
     });
@@ -64,4 +64,35 @@ $(document).on('click', '.profit', function(event){
     $(".message").text(`your profit is ${profit}`);
     $(".message").fadeIn(1000);
     setTimeout(function(){$(".message").fadeOut(1000);}, 1000);
+});
+
+$(document).on('click', '.new-record .submit', function(){
+    let stock = $('.new-record>input[name=stock]').val();
+    let price = $('.new-record>input[name=price]').val();
+    let enterDate = $('.new-record>input[name=enterDate]').val();
+    let dropLine = $('.new-record>input[name=dropLine]').val();
+    if(!stock||stock.trim()==''){
+        return;
+    }
+    if(!price||price.trim()==''||isNaN(Number(price))){
+        return;
+    }
+    if(!enterDate||enterDate.trim()==''){
+        return;
+    }
+    if(!dropLine||dropLine.trim()==''||isNaN(Number(dropLine))){
+        return;
+    }
+
+    let obj = {
+        stock:stock,
+        price:price,
+        enterDate: enterDate,
+        dropLine:dropLine
+    };
+
+    $.get('newRecord_jesse', obj).then(function(result){
+        console.log(result)
+    });
+
 });

@@ -56,3 +56,20 @@ body{
 .profit>img {
     height: 2rem;
 }
+.new-record>input {
+    min-width: 5rem;
+    margin-top: 0.5rem;
+    height:  1rem;
+    border-radius: .2rem;
+}
+
+.new-record {
+    width: 11rem;
+    padding: 0.4rem;
+    background: green;
+    position: absolute;
+    top: 40%;
+    border-radius: 0.4rem;
+    left: 40%;
+    box-shadow: 0px 0px 20px 8px #c67373;
+}

@@ -29,9 +29,14 @@ var CronJob = require('cron').CronJob;
 
 //let localLogger = require('./server/logger/logger');
 
+let jsonfile = require('jsonfile');
+let fetch = require('./server/fetchService');
+let DBPath = __dirname+"/server/data/data.json";
 
-new CronJob('00 33 17 * * 1-5', function() {
-  console.log('daily job');
+new CronJob('00 01 15 * * 1-5', function() {
+  fetch.triggerFetch((result)=>{
+    jsonfile.writeFileSync(DBPath, result);
+  });
 }, null, true, 'Asia/Shanghai');
 
 // catch 404 and forward to error handler

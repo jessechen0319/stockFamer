@@ -15,6 +15,9 @@
     "serve-favicon": "~2.4.5",
     "jsonfile": "latest",
     "cron": "latest",
-    "log4js": "latest"
+    "log4js": "latest",
+    "task-chain": "latest",
+    "bufferhelper": "latest",
+    "iconv-lite": "latest"
   }
 }
