@@ -67,6 +67,7 @@ body{
     width: 11rem;
     padding: 0.4rem;
     background: green;
+    display: none;
     position: absolute;
     top: 40%;
     border-radius: 0.4rem;

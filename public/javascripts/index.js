@@ -66,6 +66,10 @@ $(document).on('click', '.profit', function(event){
     setTimeout(function(){$(".message").fadeOut(1000);}, 1000);
 });
 
+$(document).on('click', '.add-new-record', function(){
+    $(".new-record").fadeIn();
+});
+
 $(document).on('click', '.new-record .submit', function(){
     let stock = $('.new-record>input[name=stock]').val();
     let price = $('.new-record>input[name=price]').val();
@@ -92,7 +96,9 @@ $(document).on('click', '.new-record .submit', function(){
     };
 
     $.get('newRecord_jesse', obj).then(function(result){
-        console.log(result)
+        console.log(result);
+        $(".new-record").fadeOut();
+        location.href = location.href;
     });
 
 });
