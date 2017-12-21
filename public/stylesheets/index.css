@@ -56,3 +56,13 @@ body{
 .profit>img {
     height: 2rem;
 }
+.message{
+    display: none;
+    height: 2rem;
+    min-width: 9rem;
+    background: white;
+    color: black;
+    margin: auto;
+    line-height: 2rem;
+    font-size: 1.5rem;
+}

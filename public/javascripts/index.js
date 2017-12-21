@@ -28,9 +28,9 @@
             title = `<td class="icon drop"><img src="/images/蔫了_让出土地.png"></td>`;
         }
         let profite = (data.current - data.price)/data.price;
-        let profile = '<td class="profit">暂无收益</td>';
+        let profile = '<td class="profit" message="'+(profite*100).toFixed(2)+'%">暂无收益</td>';
         if(finalObject.hasProfile){
-            profile = '<td class="profit withprofit" message="'+(profite*100).toFixed(2)+'%"><img  src="/images/果实.png"></td>';
+            profile = '<td class="profit withprofit" message="'+(profite*100).toFixed(2)+'%"><img message="'+(profite*100).toFixed(2)+'%" src="/images/果实.png"></td>';
         }
         
         if(profite > 0.05 && !finalObject.beginer){
@@ -55,4 +55,13 @@
             })
         }
     });
+   
 })($);
+
+$(document).on('click', '.profit', function(event){
+    console.log(event);
+    let profit = $(event.target).attr('message');
+    $(".message").text(`your profit is ${profit}`);
+    $(".message").fadeIn(1000);
+    setTimeout(function(){$(".message").fadeOut(1000);}, 1000);
+});

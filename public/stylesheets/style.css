@@ -87,3 +87,16 @@ html {
 .common-button.button-red{
   background: rgb(248, 4, 65);
 }
+
+.message{
+  display: none;
+  height: 2rem;
+  min-width: 9rem;
+  background: white;
+  color: black;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 40%;
+  top: 10rem;
+}
