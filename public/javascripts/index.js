@@ -70,6 +70,10 @@ $(document).on('click', '.add-new-record', function(){
     $(".new-record").fadeIn();
 });
 
+$(document).on('click', '.new-record .close', function(){
+    $(".new-record").fadeOut();
+});
+
 $(document).on('click', '.new-record .submit', function(){
     let stock = $('.new-record>input[name=stock]').val();
     let price = $('.new-record>input[name=price]').val();
