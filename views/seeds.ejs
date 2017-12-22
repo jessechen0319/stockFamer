@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/seeds.js"></script>
+    <script src="/javascripts/vue.js"></script>
+    <title>种子仓库</title>
+</head>
+
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>
+                    代码
+                </th>
+                <th>
+                    代码
+                </th>
+                <th>
+                    代码
+                </th>
+                <th>
+                    代码
+                </th>
+            </tr>
+        </table>
+        <!-- <div>
+            <p v-for="seed in seeds">{{seed.stock}}</p>
+        </div> -->
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            seeds: []
+        },
+        methods: {
+
+        }
+    });
+
+    $.get("/seeds/getAllSeeds").then((data) => {
+        app.seeds = data;
+    });
+</script>
+
+</html>
